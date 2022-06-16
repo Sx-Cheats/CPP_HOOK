@@ -17,6 +17,7 @@ DWORD ModifyPageAccess(void*base,DWORD ID)
 }
 
 #if SUPPORT_HOOK==64
+
   int Base_Tunnel_Size = 94;
   BYTE ValidOpCodeSrc  = 0x57; //  push rdi
 
