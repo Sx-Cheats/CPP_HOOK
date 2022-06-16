@@ -363,7 +363,6 @@ void asm_ret(BYTE *dest)
 
 typedef struct StructHook
 {
-
   void Detach();
   void Attach(); 
   void LockTunnelRegion();
@@ -398,7 +397,6 @@ typedef struct StructHook
   
   
 };
-
 
 bool StructHook::IsNotNull()
 {
