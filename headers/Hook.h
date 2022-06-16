@@ -1,8 +1,9 @@
+
 #include "./Ntapi.h"
 
 int TunnelOffsetInstruction=0;
 
-#define DUMMY_FUNCTION __declspec(naked)
+#define DUMMY_FUNCTION __declspec(naked) void __cdecl
 #define HOOK_FUNCTION_BODY void __cdecl
 
 typedef unsigned __int64 Q_WORD;
@@ -140,7 +141,7 @@ void inline __cdecl P_x64_GetRegisterFunctionHooked(Q_WORD CurrentEBP,P_x64_Regi
     
 }
 
-DUMMY_FUNCTION void __cdecl TopBodyTunnel_x64()
+DUMMY_FUNCTION  TopBodyTunnel_x64()
 { 
    asm("pushq    rbp");
    asm("pushq    rax");
@@ -162,7 +163,7 @@ DUMMY_FUNCTION void __cdecl TopBodyTunnel_x64()
  
 }
 
-DUMMY_FUNCTION void __cdecl BottomBodyTunnel_x64()
+DUMMY_FUNCTION BottomBodyTunnel_x64()
 {
     asm("movq     rsp,rbp"); //size : (mov)3 + (operande)7 = 10
 
@@ -281,8 +282,6 @@ void inline P_x32_GetRegisterFunctionHooked(DWORD CurrentEBP,P_x32_RegisterFunct
         RFH.esp  = (DWORD*)(CurrentEBP+32);
 }
 
-
-
 DUMMY_FUNCTION void __cdecl TopBodyTunnel_x32()
 {
    asm("push    ebp");
@@ -364,6 +363,7 @@ void asm_ret(BYTE *dest)
 
 typedef struct StructHook
 {
+
   void Detach();
   void Attach(); 
   void LockTunnelRegion();
