@@ -1,8 +1,6 @@
 #include "./Ntapi.h"
 
-
 int TunnelOffsetInstruction=0;
-
 
 #define DUMMY_FUNCTION __declspec(naked)
 #define HOOK_FUNCTION_BODY void __cdecl
