@@ -6,3 +6,5 @@
 
 **x64 Compile :**<br/><br/>
 **x64g++.exe -masm=intel -mconsole  -std=c++17 -Wunused-value   -U__STRICT_ANSI__ -fpermissive -Wmisleading-indentation -Wall .\\(mainx32.cpp||mainx64.cpp) -o HookBySxCheats.exe**<br/><br/>
+
+**Author : Sx-Cheats**
