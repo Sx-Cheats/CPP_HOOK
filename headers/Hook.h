@@ -48,7 +48,7 @@ DWORD ModifyPageAccess(void*base,DWORD ID)
     typedef _REGISTER_FUNCTION_HOOKED_x64 <Q_WORD> x64_RegisterFunctionHooked;
     typedef _REGISTER_FUNCTION_HOOKED_x64 <Q_WORD*> P_x64_RegisterFunctionHooked;
 
-  struct  _Rx64OC_
+  struct  _Rx64_
 {
     struct _mov_
     {
