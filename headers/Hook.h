@@ -1,4 +1,5 @@
 
+
 #include "./Ntapi.h"
 
 int TunnelOffsetInstruction=0;
@@ -282,7 +283,7 @@ void inline P_x32_GetRegisterFunctionHooked(DWORD CurrentEBP,P_x32_RegisterFunct
         RFH.esp  = (DWORD*)(CurrentEBP+32);
 }
 
-DUMMY_FUNCTION void __cdecl TopBodyTunnel_x32()
+DUMMY_FUNCTION TopBodyTunnel_x32()
 {
    asm("push    ebp");
    asm("push    eax");
@@ -295,7 +296,7 @@ DUMMY_FUNCTION void __cdecl TopBodyTunnel_x32()
    asm("ret");
 }
 
-DUMMY_FUNCTION void __cdecl BottomBodyTunnel_x32()
+DUMMY_FUNCTION BottomBodyTunnel_x32()
 {
     asm("mov     esp,ebp");
     asm("pop     edi");
