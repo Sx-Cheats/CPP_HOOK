@@ -38,7 +38,6 @@ StructHook x64_Hook(Q_WORD h_src,Q_WORD h_dest,int NByteSteal)
 
       ByteCpy((Tunnel+TunnelOffsetInstruction),(BYTE*)(h_src),NByteSteal);
 
-      // Mov ret addres qword (word*4) = (16*4) = 64B
       push_register(Rx64.push.RDI, Tunnel+TunnelOffsetInstruction);
       push_register(Rx64.push.RDI, Tunnel+TunnelOffsetInstruction);
  
