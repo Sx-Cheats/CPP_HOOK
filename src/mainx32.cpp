@@ -12,7 +12,6 @@ void WriteWordChar(BYTE*base,BYTE*text)
     do
     {
         OldProtect=ModifyPageAccess((void*)(base+idx),PAGE_EXECUTE_READWRITE);
-        //*(base+size)= (T)0x1;
         *(base+idx)=*(text+idx);
         ModifyPageAccess((void*)(base+idx),OldProtect);
        
