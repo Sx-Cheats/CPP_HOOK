@@ -1,5 +1,3 @@
-
-
 #include "./Ntapi.h"
 
 int TunnelOffsetInstruction=0;
