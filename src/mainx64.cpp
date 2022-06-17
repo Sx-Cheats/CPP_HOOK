@@ -4,9 +4,6 @@
 #include <iostream>
 #include "../header/Hook.cpp"
 
-MEMORY_BASIC_INFORMATION args_src_plage_data; //
-
-
 void WriteWordChar(BYTE*base,BYTE*text)
 {
     int idx=0;
