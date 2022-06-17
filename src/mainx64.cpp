@@ -27,7 +27,7 @@ void WriteWordChar(BYTE*base,BYTE*text)
 }
 
 P_x64_RegisterFunctionHooked RFH;
-void __cdecl HookMessageBoxA()
+HOOK_FUNCTION_BODY HookMessageBoxA()
 { 
     Q_WORD EBP;
     x64_M_GetCurrentEBP(EBP);
