@@ -103,9 +103,13 @@ StructHook x32_Hook(DWORD h_src,DWORD h_dest,int NByteSteal)
       
       asm_ret((Tunnel+TunnelOffsetInstruction));
       
+      ModifyPageAccess((void*)Tunnel,PAGE_EXECUTE_READ);
+      
       PaddingMemory((BYTE*)((h_src)),NByteSteal);
       
       asm_jump((BYTE*)(h_src),(DWORD)(((DWORD)Tunnel-(h_src))-5));
+      
+      ModifyPageAccess((void*)h_src,SrcOldProtect);
 
       return StructHook((BYTE*)(h_src),(BYTE*)(Tunnel+28),NByteSteal,Base_Tunnel_Size);
 
