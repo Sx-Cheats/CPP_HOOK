@@ -11,11 +11,12 @@ void WriteWordChar(BYTE*base,BYTE*text)
     DWORD OldProtect;
     do
     {
+   
         OldProtect=ModifyPageAccess((void*)(base+idx),PAGE_EXECUTE_READWRITE);
         *(base+idx)=*(text+idx);
         ModifyPageAccess((void*)(base+idx),OldProtect);
-       
         idx++;
+        
     } while (*(text+idx));
     OldProtect=ModifyPageAccess((void*)(base+idx),PAGE_EXECUTE_READWRITE);
    *(base+idx)=0;
