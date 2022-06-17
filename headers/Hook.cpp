@@ -22,19 +22,19 @@ StructHook x64_Hook(Q_WORD h_src,Q_WORD h_dest,int NByteSteal)
       funccpy(Tunnel,(BYTE*)((Q_WORD)TopBodyTunnel_x64)); //
       
       // ret address of dest
-      mov_in_register(Rx64.mov.RDI,Tunnel+TunnelOffsetInstruction,(Q_WORD)(Tunnel+TunnelOffsetInstruction+23)); // Size mov : 10 
+      mov_in_register(Rx64.mov.RDI,Tunnel+TunnelOffsetInstruction,(Q_WORD)(Tunnel+TunnelOffsetInstruction+23));
       
       // push ret address of dest
-      push_register(Rx64.push.RDI,Tunnel+TunnelOffsetInstruction); // Size push : 1
+      push_register(Rx64.push.RDI,Tunnel+TunnelOffsetInstruction); 
      
       // movq rdi,dest 
-      mov_in_register(Rx64.mov.RDI,Tunnel+TunnelOffsetInstruction,h_dest); // Size mov : 10 
+      mov_in_register(Rx64.mov.RDI,Tunnel+TunnelOffsetInstruction,h_dest); 
 
       // jmp rdi 
       jmp_from_register(Rx64.jmp.RDI, Tunnel+TunnelOffsetInstruction);
       
       // restore default registers value
-      funccpy((Tunnel+TunnelOffsetInstruction),(BYTE*)(BottomBodyTunnel_x64));  // blockof instruction size : 18
+      funccpy((Tunnel+TunnelOffsetInstruction),(BYTE*)(BottomBodyTunnel_x64)); 
 
       ByteCpy((Tunnel+TunnelOffsetInstruction),(BYTE*)(h_src),NByteSteal);
 
@@ -62,7 +62,7 @@ StructHook x64_Hook(Q_WORD h_src,Q_WORD h_dest,int NByteSteal)
       push_register(Rx64.push.RDI,(BYTE*)h_src);
      
       // movq rdi,Tunnel
-      mov_in_register(Rx64.mov.RDI,(BYTE*)(h_src+TunnelOffsetInstruction),(Q_WORD)(Tunnel)); // Size mov : 10 
+      mov_in_register(Rx64.mov.RDI,(BYTE*)(h_src+TunnelOffsetInstruction),(Q_WORD)(Tunnel)); 
       
       // jmp rdi
       jmp_from_register(Rx64.jmp.RDI,(BYTE*)(h_src+TunnelOffsetInstruction));
